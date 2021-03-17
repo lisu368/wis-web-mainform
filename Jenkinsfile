@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Merge') {
             steps {
-                bat 'git subtree merge origin-login/login'
-                bat 'git subtree merge origin-register/register'
+                bat 'git subtree add -P src/main/webapp https://github.com/lisu368/wis-web-login.git master'
+                bat 'git subtree add -P src/main/webapp https://github.com/lisu368/wis-web-register.git master'
             }
         }
         stage('Deploy') {
